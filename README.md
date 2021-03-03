@@ -1,2 +1,3 @@
 # PTsolvers.github.io
-PTsolvers website landing page
+
+The Pseudo-Transient solvers landing page. View it [here](https://ptsolvers.github.io).
