@@ -13,4 +13,4 @@ This website is meant for listing the content of the PTsolvers project.
 
 ## More to come
 
-This website is under construction - stay tuned as there will be more to come soon !
+This website is under construction 🚧 - stay tuned as there will be more to come soon !
