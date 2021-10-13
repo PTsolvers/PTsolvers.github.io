@@ -1,0 +1,25 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/franklin.css"> <link rel=stylesheet  href="/css/basic.css"> <link rel=icon  href="/assets/favicon.png" type="image/png"> <title>website-memo</title> <header> <div class=blog-name ><a href="/">PTsolver</a></div> <nav> <ul> <li><a href="/">Home</a> <li><a href="/menu1/">Projects</a> <li><a href="/menu2/">About</a> </ul> <img src="/assets/hamburger.svg" id=menu-icon > </nav> </header> <div class=franklin-content ><h1 id=website-memo ><a href="#website-memo" class=header-anchor >website-memo</a></h1> <p>This document lists the basics on how to edit the PTsolvers website accessible at https://ptsolvers.github.io.</p> <p>🚧 More to come soon.</p> <h2 id=franklin_static_website ><a href="#franklin_static_website" class=header-anchor >Franklin static website</a></h2> <p>To test the website locally &#40;or after making the a pull from Git&#41;:</p> <pre><code class="julia-repl hljs"><span class=hljs-meta >julia&gt;</span><span class=language-julia > <span class=hljs-keyword >using</span> Franklin, NodeJS
+</span>
+<span class=hljs-meta >julia&gt;</span><span class=language-julia > serve(clear=<span class=hljs-literal >true</span>)</span></code></pre> <blockquote> <p>Note the first time you are using <code>NodeJS</code>, you need to execute:</p> </blockquote> <pre><code class="julia-repl hljs"><span class=hljs-meta >julia&gt;</span><span class=language-julia > run(<span class=hljs-string >`sudo <span class=hljs-subst >$(npm_cmd()</span>) install highlight.js`</span>)</span></code></pre>
+<h2 id=how-to ><a href="#how-to" class=header-anchor >How-to</a></h2>
+<h3 id=add_youtube_video ><a href="#add_youtube_video" class=header-anchor >Add YouTube video</a></h3>
+<p>To embed YouTube videos, go to YouTube, click on the <code>Share</code> link and then <code>&lt;Embed&gt;</code>, and copy-paste the script into an html block:</p>
+<pre><code class="md hljs"><span class=hljs-code >~~~
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/DvlM0w6lYEY&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
+~~~</span></code></pre>
+<h3 id=gif_and_loopcount ><a href="#gif_and_loopcount" class=header-anchor >gif and loopcount</a></h3>
+<p>You can use <a href="https://www.lcdf.org/gifsicle/">gifsicle</a> as command line tool to modify the loopcount for gifs to be included in the scripts &#40;tested on MacOS&#41;:</p>
+<pre><code class="sh hljs">gifsicle gif_loopcount_inf.gif --no-loopcount &gt; new_gif_no_loopcount.gif
+gifsicle gif_loopcount_inf.gif --loop=3 &gt; new_gif_loopcount_3.gif</code></pre>
+<h2 id=misc ><a href="#misc" class=header-anchor >Misc</a></h2>
+<h3 id=control_the_global_page_content_width ><a href="#control_the_global_page_content_width" class=header-anchor >Control the global page content width</a></h3>
+<p>Put in <code>_layout/head</code> the following, before the opening of the body and after the loading of the css:</p>
+<pre><code class="html hljs"><span class=hljs-tag >&lt;<span class=hljs-name >style</span>&gt;</span><span class=language-css >
+<span class=hljs-selector-class >.content</span> {<span class=hljs-attribute >max-width</span>: <span class=hljs-number >50rem</span>}
+</span><span class=hljs-tag >&lt;/<span class=hljs-name >style</span>&gt;</span></code></pre>
+<div class=page-foot >
+  <div class=copyright >
+    &copy; Ludovic Räss. Last modified: October 13, 2021. <br> Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div>
